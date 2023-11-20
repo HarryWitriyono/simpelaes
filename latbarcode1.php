@@ -1,6 +1,7 @@
 <?php 
 include("bar128.php");
-$number=base64_encode("Harry W.1311094102");
+include("aes1.php");
+$pesan="Harry W.1311094102";
+$number=base64_encode(aes($pesan,$algoaes,$kunci,$iv,1));
 echo bar128($number);
-
 ?>
