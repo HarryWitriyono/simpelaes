@@ -35,5 +35,6 @@
     $matrixPointSize = 2;
     QRcode::png($data, $filename, $errorCorrectionLevel, $matrixPointSize, 1);   
     echo '<br>File QR : <br><img src="'.$filename.'">';
+    include('bar128.php');
     echo '<br>Barcode : '.bar128($data);
 }
