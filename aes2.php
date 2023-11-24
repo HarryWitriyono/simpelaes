@@ -9,5 +9,9 @@
   $databarcode=openssl_encrypt($databarcode,$algo,$kunci,0,$iv);
   include('bar128.php');
   echo bar128($databarcode);
+  include('qrcode/qrlib.php');
+  $filename=date('YmdHis').".png";
+  QRcode::png($databarcode, $filename, "H", 6, 1); 
+  echo '<br><img src="'.$filename.'">';
 }
 ?>
